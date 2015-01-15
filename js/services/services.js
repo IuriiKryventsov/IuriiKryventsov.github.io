@@ -16,7 +16,7 @@ define(['backbone', 'text!appTemplates/comments.html', 'appCollections/appCommen
 				url: url,
 				dataType: 'jsonp',
 				type: 'GET',
-				data: {client_id: 'e0eb0bea7bf144aebfb2fb7dedb1cce1'},
+				data: {client_id: 'b72fa81b108841b3aaba1cd330b43a3b'},
 				success: function (response) {
 					if (loadMore) {
 						var myModels = [];
