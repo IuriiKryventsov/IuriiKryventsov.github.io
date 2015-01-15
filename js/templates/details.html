@@ -1,0 +1,35 @@
+<div class="main">
+	<section class="details row">
+		<aside class="photo col-xs-7">
+			<img id="photo-details" class="img-responsive" src="<%= data.images.standard_resolution.url %>" alt=""/>
+		</aside>
+		<aside class="information col-xs-5">
+			<div id="details-information" class="details-information">
+				<% if(data.caption){ %>
+				<div class="description-top">
+					<img class="img-responsive avatar" src="<%= data.caption.from.profile_picture %>"/>
+					<span class="username"><%= data.user.username %></span><br/>
+					<span class="created"><%= new Date(data.caption.created_time * 1000).toLocaleString() %></span><br/>
+					<p class="text-description"><%= data.caption.text %></p>
+				</div>
+				<% } %>
+				<div id="comments-field" class="comments">
+					<ul class="description panel well comment-list">
+						<% _.each(data.comments.comments, function(obj){ %>
+						<li class="photo-comment">
+							<img class="img-responsive avatar-details"
+									 src="https://instagramimages-a.akamaihd.net/profiles/profile_3573549_75sq_1383227729.jpg"/>
+							<span class="username"><%= data.comments.username %></span><br/>
+							<span class="text"><%= obj.text %></span>
+						</li>
+						<% }); %>
+					</ul>
+				</div>
+				<div class="leave-comment">
+					<input id="comments-add" type="text" placeholder="Leave a comment..."/>
+					<button id="addBtn" class="button"><span>...</span></button>
+				</div>
+			</div>
+		</aside>
+	</section>
+</div>

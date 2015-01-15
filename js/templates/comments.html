@@ -1,0 +1,10 @@
+<ul class="description panel well comment-list">
+	<% _.each(comments, function(obj){ %>
+	<li class="photo-comment">
+		<img class="img-responsive avatar"
+				 src="https://instagramimages-a.akamaihd.net/profiles/profile_3573549_75sq_1383227729.jpg"/>
+		<span class="username"><%= username %></span><br/>
+		<span class="text"><%= obj.text %></span>
+	</li>
+	<% }); %>
+</ul>

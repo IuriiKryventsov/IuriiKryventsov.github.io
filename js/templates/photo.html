@@ -1,0 +1,49 @@
+<div id="<%= attributes.id %>">
+	<div class="photo">
+		<a href="#/photos/<%= attributes.id %>">
+			<img class="img-responsive shadow" src="<%= attributes.images.standard_resolution.url %>" alt=""/>
+		</a>
+	</div>
+	<div class="likes panel panel-body">
+		<img class="img-like img-responsive" src="img/heart.png" alt=""/>
+		<b><%= attributes.likes.count %></b>
+	</div>
+	<% if(attributes.caption){ %>
+	<div class="description-top-homepage">
+		<img class="img-responsive avatar" src="<%= attributes.caption.from.profile_picture %>"/>
+		<span class="username"><%= attributes.caption.from.username %></span><br/>
+		<% if(attributes.caption.text){ %>
+		<span class="text"><%= attributes.caption.text %></span>
+		<% } %>
+	</div>
+	<% } %>
+	<% if(attributes.comments){ %>
+	<ul class="panel well comment-list">
+		<div class="photo-comment comments-count">
+			<% if(attributes.comments.length > 3){ %>
+			<span data-id="<%=attributes.id %>"
+						class="expand-comments"><%= attributes.comments.length - 3 %> more comments</span>
+			<% } %>
+		</div>
+		<% _.each(attributes.comments, function(obj, i){ %>
+		<% if (i + 3 < attributes.comments.length) {%>
+		<li style="display:none" class="photo-comment">
+			<% } else {%>
+		<li class="photo-comment">
+			<% }%>
+			<img class="img-responsive avatar"
+					 src="https://instagramimages-a.akamaihd.net/profiles/profile_3573549_75sq_1383227729.jpg"/>
+
+			<div class="username-comment"><%= attributes.username %></div><br/>
+			<div class="text-homepage"><%= obj.text %></div>
+		</li>
+		<% }); %>
+	</ul>
+	<% } %>
+	<div class="panel panel-footer footer">
+		<input class="form-control comments-add-homepage" type="text" placeholder="Write a comment..."/>
+	</div>
+	<br/><br/>
+</div>
+
+
