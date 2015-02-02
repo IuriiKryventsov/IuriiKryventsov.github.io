@@ -1,6 +1,6 @@
 window.App = {
-	Models: {},
-	Views: {},
-	Routers: {},
-	Collections: {}
+		Models: {},
+		Views: {},
+		Routers: {},
+		Collections: {}
 };

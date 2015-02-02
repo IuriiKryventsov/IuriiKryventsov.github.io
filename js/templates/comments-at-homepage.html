@@ -1,18 +1,20 @@
 <% if(comments){ %>
 <ul class="panel well comment-list">
-	<div class="photo-comment comments-count">
-		<% if(comments.length){ %>
-		<%= comments.length %> more comments
-		<% }; %>
-	</div>
-	<% _.each(comments, function(obj){ %>
-	<li class="photo-comment">
-		<img class="img-responsive avatar"
-				 src="https://instagramimages-a.akamaihd.net/profiles/profile_3573549_75sq_1383227729.jpg"/>
-		<div class="username-comment"><%= username %></div>
-		<br/>
-		<div class="text"><%= obj.text %></div>
-	</li>
-	<% }); %>
+    <div class="photo-comment comments-count">
+        <% if(comments.length){ %>
+        <%= comments.length %> more comments
+        <% }; %>
+    </div>
+    <% _.each(comments, function(obj){ %>
+    <li class="photo-comment">
+        <img class="img-responsive avatar"
+             src="https://instagramimages-a.akamaihd.net/profiles/profile_3573549_75sq_1383227729.jpg"/>
+
+        <div class="username-comment"><%= username %></div>
+        <br/>
+
+        <div class="text"><%= obj.text %></div>
+    </li>
+    <% }); %>
 </ul>
 <% } %>
