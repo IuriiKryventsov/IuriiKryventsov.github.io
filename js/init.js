@@ -1,18 +1,17 @@
 requirejs.config({
-		baseUrl: "js/library",
+		baseUrl: "js",
 		paths: {
-				jquery: 'jquery-2.1.1',
-				backbone: 'backbone',
-				underscore: 'underscore',
-				backboneLocalStorage: 'backbone.localStorage',
-				text: 'text',
-				globals: '../globals',
-				appServices: '../services',
-				appCollections: '../Collections',
-				appRouter: '../Router',
-				appModels: '../Models',
-				appViews: '../Views',
-				appTemplates: '../templates'
+				jquery: 'library/jquery-2.1.1',
+				backbone: 'library/backbone',
+				underscore: 'library/underscore',
+				backboneLocalStorage: 'library/backbone.localStorage',
+				text: 'library/text',
+				globals: 'globals',
+				Collections: 'Collections',
+				Router: 'Router',
+				Models: 'Models',
+				Views: 'Views',
+				Templates: 'templates'
 		},
 		shim: {
 				'underscore': {
@@ -24,7 +23,7 @@ requirejs.config({
 				}
 		}
 });
-require(["jquery", "../application"], function ($, Application) {
+require(["jquery", "application"], function ($, Application) {
 		$(document).ready(function () {
 				var myApplication = new Application();
 				myApplication.init();

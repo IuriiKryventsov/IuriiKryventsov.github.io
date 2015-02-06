@@ -1,7 +1,7 @@
 /**
 	*  Application object
 	*/
-define(['appModels/appModel', 'appModels/photoModel', 'appViews/appDetailsView', 'appViews/appHomeView', 'appViews/appPhotosTemplateView', 'appRouter/appRouter', 'appCollections/appCollection', 'appCollections/appCommentCollection', 'appServices/services', 'globals/globals', 'jquery', 'backbone'], function (AppModel, PhotoModel, DetailsView, HomeView, PhotosTemplateView, Router, PhotoCollection, CommentCollection, services, globals, $, Backbone) {
+define(['Models/appModel', 'Models/photoModel', 'Views/appDetailsView', 'Views/appHomeView', 'Views/appPhotosTemplateView', 'Router/appRouter', 'Collections/appCollection', 'Collections/appCommentCollection', 'globals/globals', 'jquery', 'backbone'], function (AppModel, PhotoModel, DetailsView, HomeView, PhotosTemplateView, Router, PhotoCollection, CommentCollection, globals, $, Backbone) {
 		var Application = (function () {
 				var self = null;
 				//Model

@@ -1,4 +1,4 @@
-define(['backbone', 'appServices/services', 'appViews/appPhotosTemplateView', 'text!appTemplates/homepage.html'], function (Backbone, services, appPhotosTemplateView, HomepageTemplate) {
+define(['backbone', 'Views/appPhotosTemplateView', 'text!Templates/homepage.html'], function (Backbone, appPhotosTemplateView, HomepageTemplate) {
 		App.Views.HomeView = Backbone.View.extend({
 				events: {
 						"click button#btn": "loadMore",

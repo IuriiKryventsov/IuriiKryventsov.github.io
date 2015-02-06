@@ -1,4 +1,4 @@
-define(['backbone', 'appServices/services', 'appCollections/appCommentCollection', 'text!appTemplates/details.html', 'text!appTemplates/comments.html'], function (Backbone, services, CommentCollection, DetailsTemplate, CommentsTemplate) {
+define(['backbone', 'Collections/appCommentCollection', 'text!Templates/details.html', 'text!Templates/comments.html'], function (Backbone, CommentCollection, DetailsTemplate, CommentsTemplate) {
 		App.Views.DetailsView = Backbone.View.extend({
 				events: {
 						"click #addBtn": "addComment",
@@ -16,7 +16,8 @@ define(['backbone', 'appServices/services', 'appCollections/appCommentCollection
 						var page = this.appmodel.get("page");
 						if (page === 'detailspage') {
 								var id = this.appmodel.get("id");
-								services.getPhotoObj(this.model, id);
+								this.model.set('id', id,{silent:true});
+								this.model.fetch({dataType: 'jsonp'})
 						}
 				},
 				render: function () {
@@ -62,6 +63,5 @@ define(['backbone', 'appServices/services', 'appCollections/appCommentCollection
 				}
 		});
 		return App.Views.DetailsView;
-})
-;
+});
 

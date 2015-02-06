@@ -1,4 +1,4 @@
-define(['backbone', 'text!appTemplates/photo.html'], function (Backbone, PhotoTemplate) {
+define(['backbone', 'text!Templates/photo.html'], function (Backbone, PhotoTemplate) {
 		App.Views.PhotoView = Backbone.View.extend({
 				events: {
 						"keyup .comments-add-homepage": "addComment"
@@ -20,7 +20,7 @@ define(['backbone', 'text!appTemplates/photo.html'], function (Backbone, PhotoTe
 				},
 				addComment: function (e) {
 						if (e.keyCode == 13) {
-								var target = $(event.target);
+								var target = $(e.target);
 								var id = this.model.get("id");
 								var text = target.val();
 								if (text.length < 1) {

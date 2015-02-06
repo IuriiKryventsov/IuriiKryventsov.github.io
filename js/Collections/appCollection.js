@@ -1,4 +1,4 @@
-define(['backbone', 'appModels/photoModel'], function (Backbone, photoModel) {
+define(['backbone', 'Models/photoModel'], function (Backbone, photoModel) {
 		App.Collections.Photos = Backbone.Collection.extend({
 				model: photoModel,
 				url: 'https://api.instagram.com/v1/media/popular?callback=?&count=5',
