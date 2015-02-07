@@ -3,7 +3,6 @@ define(['backbone', 'Models/photoModel'], function (Backbone, photoModel) {
 				model: photoModel,
 				url: 'https://api.instagram.com/v1/media/popular?callback=?&count=5',
 				sync: function (method, collection, options) {
-						console.log(options);
 						var loadMore = options.data.loadMore;
 						var _sync = Backbone.sync;
 						options.success = function (response) {
